@@ -3,12 +3,12 @@ View(data_aldis)
 mean(data_aldis$Tinggi.Badan)
 str(data_aldis)
 
-data_aldis = read.csv("C:/Users/aldis/Downloads/data.csv")
-View(data_aldis)
-mean(data_aldis$Tinggi.Badan)
-str(data_aldis)
+data_aldis_cvs = read.csv("C:/Users/aldis/Downloads/data.csv")
+View(data_aldis_cvs)
+mean(data_aldis_cvs$Tinggi.Badan)
+str(data_aldis_cvs)
 
 install.packages("xlsx")
 library("xlsx")
 
-data_aldis = read.xlsx("C:/Users/aldis/Downloads/data.xlsx")
+data_aldis_xlsx = read.xlsx("C:/Users/aldis/Downloads/data.xlsx",1)
