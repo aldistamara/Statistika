@@ -1,0 +1,15 @@
+#Filter Data
+library(RMySQL)
+con = dbConnect(MySQL(), user = 'root', password = '', dbname = 'PS2Aldis', host = 'localhost')
+dbListTables(con) 
+myQuery <- "select * from becky;"
+df <- dbGetQuery(con, myQuery)
+
+#Teknik Filter Data
+library(dplyr)
+df<-filter(df,Gender=="P")
+print(df)
+
+library(dplyr)
+df<-filter(df,Gender=="L")
+print(df)
