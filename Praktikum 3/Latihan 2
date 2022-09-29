@@ -1,0 +1,43 @@
+#Membaca data
+data_aldis = read.csv("C:/Users/aldis/Downloads/data.csv")
+View(data_aldis)
+
+#Subset data
+aldis <- data_aldis[4]
+View(aldis)
+
+#Mengubah nilai dalam kolom dengan kondisi if else
+aldis$Tinggi.Badan <- ifelse(aldis$Tinggi.Badan >160, c("tinggi"), c("pendek"))
+View(aldis)
+
+#Menambah varible dan mengisi baris data
+aldis$Jurusan <- c("Infor21")
+View(aldis)
+
+aldis$Fakultas <- c("FTI")
+View(aldis)
+
+#Menghapus variable
+aldis$Fakultas<-NULL
+View(aldis)
+
+#Merge Data Frame, memisahkan data sesuai kolom
+data_aldis.kolom1dan2 <- data_aldis[,1:2]
+View(data_aldis.kolom1dan2)
+
+data_aldis.kolom3dan4 <- data_aldis[,3:4]
+View(data_aldis.kolom3dan4)
+
+#Memisahkan data sesuai kolom dan digabungkan kembali
+data_aldis.kolom1sd4<-cbind(data_aldis.kolom1dan2, data_aldis.kolom3dan4) 
+View(data_aldis.kolom1sd4)
+
+#Merge baris, memisahkan data sesuai baris 
+data_aldis.baris1sd5 <- data_aldis[1:5,] 
+data_aldis.baris25sd30 <- data_aldis[25:30,] 
+data_aldis.baris1sd30 <- rbind(data_aldis.baris1sd5, data_aldis.baris25sd30) 
+View(data_aldis.baris1sd30)
+
+#Mengurutkan data sesuai kolom
+data_aldis.sort<-data_aldis[order(data_aldis$Waktu.Perjalanan),] 
+View(data_aldis.sort)
