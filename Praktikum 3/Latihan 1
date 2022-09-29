@@ -1,0 +1,44 @@
+#Membaca data
+data_aldis = read.csv("C:/Users/aldis/Downloads/houseprices.csv")
+View(data_aldis)
+
+#Subset data
+aldis <- data_aldis[data_aldis$Bedrooms==2,]
+View(aldis)
+
+#Mengubah nilai dalam kolom
+aldis$Bathrooms <- ifelse(aldis$Bathrooms >2, c("large"), c("small"))
+View(aldis)
+
+#Menambah variable dengan kondisi if else
+aldis$newvariable <- ifelse(aldis$Offers >2, c("large"), c("small"))
+View(aldis)
+
+#Mengubah isi baris data dari kolom baru 
+aldis$newvariable <- aldis$Price/aldis$SqFt
+View(aldis)
+
+#Menghapus variable
+aldis$newvariable<-NULL
+View(aldis)
+
+#Merge Data Frame, memisahkan data sesuai kolom
+data_aldis.kolom1dan2 <- data_aldis[,1:2]
+View(data_aldis.kolom1dan2)
+
+data_aldis.kolom3dan4 <- data_aldis[,3:4]
+View(data_aldis.kolom3dan4)
+
+#Memisahkan data sesuai kolom dan digabungkan kembali
+data_aldis.kolom1sd4<-cbind(data_aldis.kolom1dan2, data_aldis.kolom3dan4) 
+View(data_aldis.kolom1sd4)
+
+#Merge baris, memisahkan data sesuai baris 
+data_aldis.baris1sd3 <- data_aldis[1:3,] 
+data_aldis.baris4sd6 <- data_aldis[4:6,] 
+data_aldis.baris1sd6 <- rbind(data_aldis.baris1sd3, data_aldis.baris4sd6) 
+View(data_aldis.baris1sd6)
+
+#Mengurutkan data sesuai kolom
+data_aldis.sort<-data_aldis[order(data_aldis$Price),] 
+View(data_aldis.sort)
