@@ -6,7 +6,7 @@ View(data_aldis)
 aldis <- data_aldis[data_aldis$Bedrooms==2,]
 View(aldis)
 
-#Mengubah nilai dalam kolom
+#Mengubah nilai dalam kolom dengan kondisi if else
 aldis$Bathrooms <- ifelse(aldis$Bathrooms >2, c("large"), c("small"))
 View(aldis)
 
