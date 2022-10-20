@@ -1,0 +1,8 @@
+aldis = read.csv("C:/Users/aldis/Downloads/DirectMarketing.csv", sep = ";")
+hist(aldis$AmountSpent)
+d=density(aldis$AmountSpent)
+plot(d)
+
+aldis = read.csv("C:/Users/aldis/Downloads/houseprices.csv", sep = ";")
+qplot(aldis$Price, aldis$SqFt)
+plot(aldis$Price, aldis$SqFt)
