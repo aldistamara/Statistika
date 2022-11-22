@@ -21,7 +21,8 @@ b = rnorm(1000, 3.12, 0.25)
 hist(b)
 1-pnorm(170, 165, 6)
 pnorm(180, 165, 6) - pnorm(150, 165, 6)
-dbinom(2, 7, 0.9875807)
+dbinom(0, 7, 0.9875807) + dbinom(1, 7, 0.9875807) + dbinom(2, 7, 0.9875807)
+pbinom(2, 7, 0.9875807)
 
 #Latihan Keempat
 pnorm(158, 175, 30) - pnorm(125, 175, 30)
