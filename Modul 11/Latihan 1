@@ -1,0 +1,9 @@
+df_aldis = read.delim("clipboard")
+View(df_aldis)
+head(df_aldis)
+
+model <- aov(korosi~metode, data=df_aldis)
+summary(model)
+
+tukey.test <- TukeyHSD(model)
+tukey.test
