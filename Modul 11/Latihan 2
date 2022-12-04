@@ -1,0 +1,8 @@
+df_aldis=PlantGrowth
+View(df_aldis)
+
+model <- aov(weight~group, data=df_aldis)
+summary(model)
+
+tukey.test <- TukeyHSD(model)
+tukey.test
