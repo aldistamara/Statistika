@@ -1,0 +1,10 @@
+#latihan kedua
+df_aldis=read.delim("clipboard")
+df_aldis$brick_dummy <- ifelse(df_aldis$Brick == "Yes", 1,0)
+df_aldis$N_dummy1 <- ifelse(df_aldis$Neighborhood == "West", 1,0)
+df_aldis$N_dummy2 <- ifelse(df_aldis$Neighborhood == "North", 1,0)
+model=lm(df_aldis$Price~df_aldis$SqFt+df_aldis$Bedrooms+df_aldis$Bathrooms+df_aldis$brick_dummy+df_aldis$N_dummy1+df_aldis$N_dummy2)
+summary(model)
+
+by(df_aldis$Price, df_aldis$Neighborhood, mean)
+by(df_aldis$Price, df_aldis$Brick, mean)
