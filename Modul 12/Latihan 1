@@ -1,0 +1,5 @@
+#latihan pertama
+df_aldis=read.delim("clipboard")
+head(df_aldis)
+model_reg=lm(df_aldis$y~df_aldis$x)
+summary(model_reg)
