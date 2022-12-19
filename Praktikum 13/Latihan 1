@@ -1,0 +1,16 @@
+#latihan pertama
+dataku_aldis = read.delim('clipboard')
+View(dataku_aldis)
+wilcox.test(dataku_aldis$Sebelum,dataku_aldis$Setelah,paired=TRUE)
+
+dataku_aldis = read.delim('clipboard')
+View(dataku_aldis)
+wilcox.test(dataku_aldis$Sebelum,dataku_aldis$Sesudah,paired=TRUE)
+
+#latihan kedua
+df_aldis = read.delim("clipboard")
+#independent 2-group Mann-Whitney U Test
+wilcox.test(df_aldis$obat~df_aldis$grup)
+#where is numeric and A is A binary factor
+head(df_aldis)
+rank(df_aldis$obat)
