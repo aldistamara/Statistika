@@ -1,0 +1,12 @@
+#latihan ketiga
+dataku_aldis = read.delim('clipboard')
+View(dataku_aldis)
+wilcox.test(dataku_aldis$Ganjil,dataku_aldis$Genap,paired=TRUE)
+
+df_aldis = read.delim("clipboard")
+#independent 2-group Mann-Whitney U Test
+wilcox.test(df_aldis$caffeine,df_aldis$placebo,paired=TRUE)
+#where is numeric and A is A binary factor
+head(df_aldis)
+rank(df_aldis$caffeine)
+rank(df_aldis$placebo)
